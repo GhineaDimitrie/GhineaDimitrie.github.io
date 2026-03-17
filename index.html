@@ -7,75 +7,64 @@
 
 	<style>
 
-
-/* Custom Portfolio Styling for AutoLix */
-
+/* Dark Theme Fix for Portfolio */
 #portfolio {
-    background: #0F0F0F; /* Fundal închis pentru contrast profesional */
-    padding-top: 90px;
-    padding-bottom: 60px;
+    background: #0b0b0b !important; /* Force Black Background */
 }
 
-#portfolio h1 {
-    color: #FFFFFF;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.lead {
-    font-family: 'opensans-light', sans-serif;
-    font-size: 18px;
-    line-height: 30px;
-}
-
-.project-image-container {
-    transition: transform 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.project-image-container:hover {
-    transform: translateY(-5px); /* Efect de plutire la hover */
-}
-
-.feature-step h4 {
-    font-size: 19px;
-    color: #11ABB0 !important; /* Culoarea accentului din template */
-}
-
-.feature-step h4 i {
-    margin-right: 10px;
-    color: #fff;
-}
-
-.feature-step p {
-    line-height: 24px;
-    margin-bottom: 20px;
-}
-
-/* Stil pentru butonul de GitHub */
-#portfolio .button {
-    display: inline-block;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.pill {
+    background: #1a1a1a;
+    color: #11abb0;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    border: 1px solid #333;
     font-weight: bold;
 }
 
-#portfolio .button:hover {
-    background: #fff !important;
-    color: #11ABB0 !important;
+.feature-item {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: flex-start;
 }
 
-/* Ajustări pentru mobil */
-@media only screen and (max-width: 767px) {
-    .six columns {
-        width: 100% !important;
-        float: none !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
+.icon-circle {
+    background: #11abb0;
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    color: #fff;
+    font-size: 18px;
+    box-shadow: 0 0 15px rgba(17, 171, 176, 0.3);
 }
 
+.feature-text h4 {
+    color: #fff !important;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.feature-text p {
+    color: #888 !important;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0;
+}
+
+/* Make images pop */
+.main-project-card img {
+    transition: all 0.5s ease;
+}
+
+.main-project-card img:hover {
+    border-color: #11abb0;
+    box-shadow: 0 20px 60px rgba(17, 171, 176, 0.2);
+}
 		
 	</style>
 <head>
@@ -369,69 +358,64 @@
    <!-- Portfolio Section
    ================================================== -->
 
-<section id="portfolio">
+<section id="portfolio" style="background: #0b0b0b; padding: 100px 0; color: #fff;">
+   <div class="row">
+      <div class="twelve columns">
+         <h1 style="color: #fff; font-size: 42px; text-transform: uppercase; letter-spacing: 3px;">Featured Project</h1>
+         <h2 style="color: #11abb0; font-family: 'opensans-bold', sans-serif;">AutoLix: Full-Stack Car Marketplace</h2>
+         <hr style="border-color: #222; margin: 30px 0;">
+      </div>
+   </div>
 
-      <div class="row">
-         <div class="twelve columns collapsed">
-            <h1>Featured Project: AutoLix</h1>
-            <p class="lead" style="text-align: center; color: #11ABB0; margin-bottom: 40px;">
-               A comprehensive Full-Stack automotive marketplace and management platform.
-            </p>
+   <div class="row">
+      <div class="seven columns">
+         <div class="main-project-card">
+            <img src="images/home.png" alt="AutoLix Dashboard" style="width: 100%; border-radius: 12px; border: 1px solid #333; box-shadow: 0 20px 50px rgba(0,0,0,0.8);">
+            <div class="tech-pills" style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;">
+               <span class="pill">Spring Boot</span>
+               <span class="pill">Spring Security</span>
+               <span class="pill">PostgreSQL</span>
+               <span class="pill">Thymeleaf</span>
+               <span class="pill">JWT</span>
+            </div>
+         </div>
+      </div>
 
-            <div class="row">
-               <div class="six columns">
-                  <div class="project-image-container" style="background: #1F1F1F; padding: 10px; border-radius: 8px; border: 1px solid #333;">
-                     <img alt="AutoLix Main Interface" src="images/home.png" style="width: 100%; display: block; border-radius: 4px;">
-                  </div>
-                  
-                  <div style="margin-top: 25px;">
-                     <h5 style="color: #fff; border-bottom: 1px solid #11ABB0; display: inline-block;">Technical Stack</h5>
-                     <p style="font-size: 14px; color: #888; margin-top: 10px;">
-                        <strong>Backend:</strong> Java 17, Spring Boot, Spring Security, Spring Data JPA<br>
-                        <strong>Frontend:</strong> Thymeleaf Templating Engine, HTML5, CSS3, JavaScript<br>
-                        <strong>Database:</strong> PostgreSQL / H2 (Managing Car, User, and Favorite entities)<br>
-                        <strong>Architecture:</strong> Model-View-Controller (MVC) with a dedicated Service Layer
-                     </p>
-                  </div>
+      <div class="five columns">
+         <div class="feature-box">
+            <div class="feature-item">
+               <div class="icon-circle"><i class="fa fa-shield-alt"></i></div>
+               <div class="feature-text">
+                  <h4>Secure Infrastructure</h4>
+                  <p>Robust authentication layer with Role-Based Access Control (RBAC) and protected API endpoints.</p>
                </div>
+            </div>
 
-               <div class="six columns" style="text-align: left;">
-                  
-                  <div class="feature-step" style="margin-bottom: 20px;">
-                     <h4 style="color: #fff; margin-bottom: 5px;"><i class="fa fa-user-shield"></i> 1. Secure Authentication & RBAC</h4>
-                     <p style="color: #ccc; font-size: 15px;">
-                        Implemented a robust security layer using <strong>Spring Security</strong>. It features Role-Based Access Control (RBAC), distinguishing between standard users and administrators, ensuring secure access to car management and analytics.
-                     </p>
-                  </div>
+            <div class="feature-item">
+               <div class="icon-circle"><i class="fa fa-database"></i></div>
+               <div class="feature-text">
+                  <h4>Relational Data Model</h4>
+                  <p>Complex entity mapping for Vehicles, Users, and Favorites with optimized JPA queries.</p>
+               </div>
+            </div>
 
-                  <div class="feature-step" style="margin-bottom: 20px;">
-                     <h4 style="color: #fff; margin-bottom: 5px;"><i class="fa fa-search"></i> 2. Dynamic Inventory & Filtering</h4>
-                     <p style="color: #ccc; font-size: 15px;">
-                        A complete CRUD system for vehicle listings. Users can perform advanced searches and dynamic filtering by brand, price, or fuel type, powered by efficient <strong>JPA Repository</strong> queries.
-                     </p>
-                  </div>
+            <div class="feature-item">
+               <div class="icon-circle"><i class="fa fa-magic"></i></div>
+               <div class="feature-text">
+                  <h4>Smart Valuation</h4>
+                  <p>Algorithmic price estimation based on mileage, engine specs, and production year.</p>
+               </div>
+            </div>
 
-                  <div class="feature-step" style="margin-bottom: 20px;">
-                     <h4 style="color: #fff; margin-bottom: 5px;"><i class="fa fa-calculator"></i> 3. Smart Price Estimator</h4>
-                     <p style="color: #ccc; font-size: 15px;">
-                        A custom-built estimation engine (EstimateController) that calculates real-time market value for vehicles based on technical parameters such as year, mileage, and engine displacement.
-                     </p>
-                  </div>
-
-                  <div class="feature-step" style="margin-bottom: 20px;">
-                     <h4 style="color: #fff; margin-bottom: 5px;"><i class="fa fa-chart-line"></i> 4. Admin Dashboard & Favorites</h4>
-                     <p style="color: #ccc; font-size: 15px;">
-                        Includes a dedicated admin panel for user and listing oversight, along with a "Favorites" system for users to track vehicles of interest, significantly enhancing the overall User Experience.
-                     </p>
-                  </div>
-
-                  <div class="link-box" style="margin-top: 30px;">
-                     <a href="https://github.com/GhineaDimitrie/[REPOSITORY-NAME]" class="button" style="background: #11abb0; color: #fff; border: none; padding: 12px 25px; border-radius: 3px;">
-                        <i class="fa fa-github"></i> View Source Code
-                     </a>
-                  </div>
-
-               </div> </div> </div> </div> </section> 
+            <div class="link-box" style="margin-top: 40px;">
+               <a href="[LINK_GITHUB]" class="button" style="background: #11abb0; color: #fff; width: 100%; text-align: center; border-radius: 5px;">
+                  <i class="fa fa-github"></i> Explore Source Code
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
 
 
 	   
