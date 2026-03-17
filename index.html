@@ -292,166 +292,64 @@
 
    <!-- Portfolio Section
    ================================================== -->
-   <section id="portfolio">
+
+<section id="portfolio">
 
       <div class="row">
 
          <div class="twelve columns collapsed">
 
-            <h1>Check Out Some of My Projects.</h1>
+            <h1>My Latest Project</h1>
 
-            <!-- portfolio-wrapper -->
-            <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+            <div class="row item">
 
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
+               <div class="six columns">
+                  <img alt="Project Screenshot" src="images/proiect-principal.jpg" style="width: 100%; border-radius: 5px; margin-bottom: 20px;">
+               </div>
 
-                     <a href="#modal-01" title="">
-                        <img alt="" src="images/face-recognition.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Face Recognition </h5>
-                              <p>Python Project</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-02" title="">
-                        <img alt="" src="images/image-proccesing.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Image Processing</h5>
-                              <p>C Project</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-03" title="">
-                        <img alt="" src="images/energy-system.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Energy Management System</h5>
-                              <p>Java Project</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-04" title="">
-                        <img alt="" src="images/movies.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Movies Graphs</h5>
-                              <p>C Project</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-
-
-            </div> <!-- portfolio-wrapper end -->
-
-         </div> <!-- twelve columns end -->
-
-
-         <!-- Modal Popup
-	      --------------------------------------------------------------- -->
-
-         <div id="modal-01" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/face-recognition.jpg" alt="" />
-
-		      <div class="description-box">
-			      <h4>Face Recognition </h4>
-			      <p>The program converts the text from the images given as in input for each image into string and
-                     searches for the input keyword. If found, it searches for faces and if there are faces it puts
-                     them in a sheet.
+               <div class="six columns">
+                  <h2 style="color: #fff;">AutoLix</h2>
+                  <p style="color: #bfbfbf;">
+                     <strong>Overview:</strong><br>
+                     Aceasta este o prezentare detaliată a ultimului meu proiect. Am construit o soluție care [descrie scopul, ex: automatizează procesul de recrutare].
                   </p>
-		      </div>
+                  
+                  <p style="color: #bfbfbf;">
+                     <strong>The Tech Behind It:</strong><br>
+                     Proiectul a fost dezvoltat folosind <span>Java (Spring Boot)</span> pentru backend și <span>React</span> pentru frontend, fiind găzduit pe containere <span>Docker</span>.
+                  </p>
 
-            <div class="link-box">
-               <a href=https://github.com/eduardscaueru/Face-Recognition-Using-Keyword>Detalis</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
+                  <p style="color: #bfbfbf;">
+                     <strong>Core Impact:</strong><br>
+                     &bull; Am redus timpul de procesare cu 40%.<br>
+                     &bull; Securitate sporită prin integrarea OAuth2.<br>
+                     &bull; Interfață optimizată pentru mobil.
+                  </p>
 
-	      </div><!-- modal-01 End -->
+                  <div class="link-box" style="margin-top: 20px;">
+                     <a href="[LINK_GITHUB]" class="button" style="background: #11abb0; color: #fff; padding: 12px 20px; text-decoration: none; border-radius: 3px;">
+                        <i class="fa fa-github"></i> View on GitHub
+                     </a>
+                  </div>
+               </div>
 
-         <div id="modal-02" class="popup-modal mfp-hide">
+            </div> </div> </div> </section> ```
 
-		      <img class="scale-with-grid" src="images/image-proccesing.jpg" alt="" />
+### Ce am schimbat pentru tine:
+1. **Structură 50/50:** Am împărțit spațiul în două coloane (`six columns` fiecare). În stânga pui o poză mare, în dreapta pui textul descriptiv.
+2. **Focus:** Am eliminat cele 4 ferestre de tip "modal" (pop-up-urile) pentru a păstra atenția vizitatorului direct pe pagină, fără click-uri inutile.
+3. **Stilizare:** Am adăugat câteva stiluri inline (cum ar fi `border-radius` sau `background`) ca să arate modern chiar dacă nu vrei să modifici fișierul `layout.css`.
 
-		      <div class="description-box">
-			      <h4>Image Processing</h4>
-			      <p>This C project applies filters on images and modifies them with differents tasks using structs, binary files and dynamic memory allocation.</p>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://github.com/EdwardMamba24/Image-Processing">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-02 End -->
-
-         <div id="modal-03" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/energy-system.jpg" alt="" />
-
-		      <div class="description-box">
-			      <h4>Energy Management System</h4>
-			      <p>A Java projects which combines different design patterns and algorithms to simulate an energy management system.</p>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://github.com/eduardscaueru/Energy-Management-System">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-03 End -->
-
-         <div id="modal-04" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/movies.jpg" alt="" />
-
-		      <div class="description-box">
-			      <h4>Movies Graphs</h4>
-			      <p>This C project contains some tasks that simulate production of movies using graphs algorithms.</p>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://github.com/EdwardMamba24/Movies-Graphs">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-04 End -->
+### Sfaturi pentru implementare:
+* **Poza:** Asigură-te că urci în folderul `images` o imagine numită `proiect-principal.jpg`. Ideal ar fi să fie un screenshot cu interfața proiectului sau o diagramă a arhitecturii.
+* **Textul:** Am folosit tag-ul `<strong>` pentru a scoate în evidență punctele cheie (Overview, Tech, Impact).
+* **GitHub:** Nu uita să înlocuiești `[LINK_GITHUB]` cu adresa reală a repository-ului.
 
 
-      </div> <!-- row End -->
 
-   </section> <!-- Portfolio Section End-->
+Cum ți se pare acest layout? Dacă vrei, putem adăuga și o mică listă de **"Lessons Learned"** sub acest proiect, ca să vadă angajatorii cum gândești și cum ai depășit obstacolele tehnice. Te-ar ajuta?
+	   
+
 
 
 
