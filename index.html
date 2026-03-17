@@ -7,64 +7,53 @@
 
 	<style>
 
-/* Dark Theme Fix for Portfolio */
-#portfolio {
-    background: #0b0b0b !important; /* Force Black Background */
+		/* Portfolio Gallery Styling */
+.portfolio-item .item-wrap {
+   background: #111;
+   overflow: hidden;
+   border-radius: 8px;
+   border: 1px solid #222;
+   position: relative;
+   transition: all 0.3s ease-in-out;
 }
 
-.pill {
-    background: #1a1a1a;
-    color: #11abb0;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 12px;
-    border: 1px solid #333;
-    font-weight: bold;
+.portfolio-item .item-wrap img {
+   width: 100%;
+   vertical-align: bottom;
+   transition: transform 0.5s ease;
 }
 
-.feature-item {
-    display: flex;
-    margin-bottom: 30px;
-    align-items: flex-start;
+.portfolio-item .item-wrap:hover img {
+   transform: scale(1.05); /* Subtly zoom in on hover */
 }
 
-.icon-circle {
-    background: #11abb0;
-    width: 45px;
-    height: 45px;
-    min-width: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 20px;
-    color: #fff;
-    font-size: 18px;
-    box-shadow: 0 0 15px rgba(17, 171, 176, 0.3);
+.portfolio-item .item-wrap .overlay {
+   position: absolute;
+   top: 0; left: 0;
+   width: 100%; height: 100%;
+   background: rgba(0, 0, 0, 0.7);
+   opacity: 0;
+   transition: opacity 0.3s ease;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
 }
 
-.feature-text h4 {
-    color: #fff !important;
-    margin-bottom: 5px;
-    font-size: 18px;
+.portfolio-item .item-wrap:hover .overlay {
+   opacity: 1;
 }
 
-.feature-text p {
-    color: #888 !important;
-    font-size: 14px;
-    line-height: 22px;
-    margin: 0;
+.feature-info {
+   padding: 15px;
+   background: #161616;
 }
 
-/* Make images pop */
-.main-project-card img {
-    transition: all 0.5s ease;
+.feature-info h5 {
+   margin-bottom: 5px;
+   font-size: 15px;
 }
 
-.main-project-card img:hover {
-    border-color: #11abb0;
-    box-shadow: 0 20px 60px rgba(17, 171, 176, 0.2);
-}
 		
 	</style>
 <head>
@@ -357,65 +346,115 @@
 
    <!-- Portfolio Section
    ================================================== -->
-
 <section id="portfolio" style="background: #0b0b0b; padding: 100px 0; color: #fff;">
+   
    <div class="row">
       <div class="twelve columns">
-         <h1 style="color: #fff; font-size: 42px; text-transform: uppercase; letter-spacing: 3px;">Featured Project</h1>
-         <h2 style="color: #11abb0; font-family: 'opensans-bold', sans-serif;">AutoLix: Full-Stack Car Marketplace</h2>
-         <hr style="border-color: #222; margin: 30px 0;">
+         <h1 style="color: #fff; font-size: 40px;">AUTOLIX SHOWCASE</h1>
+         <p class="lead" style="color: #11abb0;">A deep dive into the pages and features of a modern car marketplace.</p>
+         <hr style="border-color: #222;">
+      </div>
+   </div>
+
+   <div class="row section-head">
+      <div class="twelve columns">
+         <h2 style="color: #fff; border-left: 4px solid #11abb0; padding-left: 15px;">Core Platform Pages</h2>
       </div>
    </div>
 
    <div class="row">
-      <div class="seven columns">
-         <div class="main-project-card">
-            <img src="images/home.png" alt="AutoLix Dashboard" style="width: 100%; border-radius: 12px; border: 1px solid #333; box-shadow: 0 20px 50px rgba(0,0,0,0.8);">
-            <div class="tech-pills" style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;">
-               <span class="pill">Spring Boot</span>
-               <span class="pill">Spring Security</span>
-               <span class="pill">PostgreSQL</span>
-               <span class="pill">Thymeleaf</span>
-               <span class="pill">JWT</span>
+      <div id="portfolio-wrapper" class="bgrid-halves cf">
+
+         <div class="columns portfolio-item">
+            <div class="item-wrap">
+               <img alt="AutoLix Homepage" src="images/home.png">
+               <div class="overlay">
+                  <div class="portfolio-item-meta">
+                     <h5>Homepage & Discovery</h5>
+                     <p>Dynamic landing page with advanced search hero section.</p>
+                  </div>
+               </div>
             </div>
          </div>
-      </div>
 
-      <div class="five columns">
-         <div class="feature-box">
-            <div class="feature-item">
-               <div class="icon-circle"><i class="fa fa-shield-alt"></i></div>
-               <div class="feature-text">
-                  <h4>Secure Infrastructure</h4>
-                  <p>Robust authentication layer with Role-Based Access Control (RBAC) and protected API endpoints.</p>
+         <div class="columns portfolio-item">
+            <div class="item-wrap">
+               <img alt="Marketplace" src="images/market.png">
+               <div class="overlay">
+                  <div class="portfolio-item-meta">
+                     <h5>Marketplace Explorer</h5>
+                     <p>Real-time filtering engine for car listings.</p>
+                  </div>
                </div>
-            </div>
-
-            <div class="feature-item">
-               <div class="icon-circle"><i class="fa fa-database"></i></div>
-               <div class="feature-text">
-                  <h4>Relational Data Model</h4>
-                  <p>Complex entity mapping for Vehicles, Users, and Favorites with optimized JPA queries.</p>
-               </div>
-            </div>
-
-            <div class="feature-item">
-               <div class="icon-circle"><i class="fa fa-magic"></i></div>
-               <div class="feature-text">
-                  <h4>Smart Valuation</h4>
-                  <p>Algorithmic price estimation based on mileage, engine specs, and production year.</p>
-               </div>
-            </div>
-
-            <div class="link-box" style="margin-top: 40px;">
-               <a href="[LINK_GITHUB]" class="button" style="background: #11abb0; color: #fff; width: 100%; text-align: center; border-radius: 5px;">
-                  <i class="fa fa-github"></i> Explore Source Code
-               </a>
             </div>
          </div>
+
+         <div class="columns portfolio-item">
+            <div class="item-wrap">
+               <img alt="Login Page" src="images/login.jpg">
+               <div class="overlay">
+                  <div class="portfolio-item-meta">
+                     <h5>Secure Authentication</h5>
+                     <p>Spring Security login with JWT and DTO validation.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="columns portfolio-item">
+            <div class="item-wrap">
+               <img alt="Admin Database" src="images/analists.jpg"> <div class="overlay">
+                  <div class="portfolio-item-meta">
+                     <h5>Inventory Management</h5>
+                     <p>Full CRUD operations and Admin dashboard control.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </div> </div>
+
+   <div class="row section-head" style="margin-top: 80px;">
+      <div class="twelve columns">
+         <h2 style="color: #fff; border-left: 4px solid #11abb0; padding-left: 15px;">Engineering Features</h2>
       </div>
    </div>
+
+   <div class="row">
+      <div class="bgrid-thirds s-bgrid-halves cf">
+
+         <div class="columns portfolio-item">
+            <div class="item-wrap feature-wrap">
+               <img alt="Price Estimator" src="images/tab-logo.png"> <div class="feature-info">
+                  <h5 style="color: #11abb0;"><i class="fa fa-calculator"></i> Smart Price Estimator</h5>
+                  <p style="font-size: 13px; color: #888;">Algorithmic valuation based on technical car specs.</p>
+               </div>
+            </div>
+         </div>
+
+         <div class="columns portfolio-item">
+            <div class="item-wrap feature-wrap">
+               <img alt="Versus Engine" src="images/electric2.png"> <div class="feature-info">
+                  <h5 style="color: #11abb0;"><i class="fa fa-columns"></i> Versus Engine</h5>
+                  <p style="font-size: 13px; color: #888;">Side-by-side comparison of multiple vehicle models.</p>
+               </div>
+            </div>
+         </div>
+
+         <div class="columns portfolio-item">
+            <div class="item-wrap feature-wrap">
+               <img alt="Rating System" src="images/logo3.png"> <div class="feature-info">
+                  <h5 style="color: #11abb0;"><i class="fa fa-star"></i> Rating System</h5>
+                  <p style="font-size: 13px; color: #888;">Community trust system for sellers and listings.</p>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </div>
+
 </section>
+
 
 
 	   
