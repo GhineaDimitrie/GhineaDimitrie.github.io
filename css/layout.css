@@ -1004,3 +1004,93 @@ footer .social-links li:first-child { margin-left: 0; }
 }
 #go-top a:hover { background-color: #0F9095; }
 
+/* ===================================================================
+ * AutoLix - Professional Project Showcase
+ * =================================================================== */
+
+/* Header-ul principal al proiectului */
+.project-header-main {
+    text-align: center;
+    margin-bottom: 80px;
+    padding: 40px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+.project-label {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #11ABB0;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.project-brand-title {
+    font-size: 80px !important;
+    line-height: 1 !important;
+    font-family: 'opensans-bold', sans-serif;
+    color: #313131;
+    margin-bottom: 20px;
+    letter-spacing: -3px;
+}
+.project-brand-title span { color: #11ABB0; }
+
+.header-underline {
+    width: 60px;
+    height: 4px;
+    background: #11ABB0;
+    margin: 0 auto 25px;
+}
+
+.badge-main {
+    display: inline-block;
+    border: 2px solid #313131;
+    padding: 6px 18px;
+    border-radius: 4px;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin: 5px;
+    font-weight: bold;
+    color: #313131;
+}
+
+/* Structura Feature-urilor */
+.project-feature {
+    margin-bottom: 120px !important;
+    display: flex;
+    align-items: center;
+}
+.reverse { flex-direction: row-reverse; }
+
+.feature-img {
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+.feature-img:hover { transform: translateY(-10px); }
+
+.feature-desc h3 {
+    font-size: 26px;
+    color: #313131;
+    border-left: 4px solid #11ABB0;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.tech-list { list-style: none; margin: 20px 0; padding: 0; }
+.tech-list li {
+    background: #f4f4f4;
+    padding: 4px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 3px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.tech-list i { color: #11ABB0; margin-right: 8px; }
+
+@media only screen and (max-width: 767px) {
+    .project-feature { flex-direction: column !important; text-align: center; }
+    .feature-desc { padding: 30px 20px; }
+    .project-brand-title { font-size: 50px !important; }
+}
+
