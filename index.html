@@ -7,51 +7,62 @@
 
 	<style>
 
-		/* Portfolio Gallery Styling */
-.portfolio-item .item-wrap {
-   background: #111;
-   overflow: hidden;
-   border-radius: 8px;
-   border: 1px solid #222;
-   position: relative;
-   transition: all 0.3s ease-in-out;
+		/* Clean Integration with Template Style */
+#portfolio {
+    background: #f7f7f7 !important; /* Gri deschis, similar cu sectiunea Resume */
+    padding: 90px 0;
+    border-top: 1px solid #e5e5e5;
 }
 
-.portfolio-item .item-wrap img {
-   width: 100%;
-   vertical-align: bottom;
-   transition: transform 0.5s ease;
+#portfolio h1 {
+    color: #313131; /* Culoarea standard a titlurilor din template */
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-.portfolio-item .item-wrap:hover img {
-   transform: scale(1.05); /* Subtly zoom in on hover */
+#portfolio h3 {
+    color: #11abb0; /* Turcoazul specific template-ului */
+    margin-bottom: 15px;
 }
 
-.portfolio-item .item-wrap .overlay {
-   position: absolute;
-   top: 0; left: 0;
-   width: 100%; height: 100%;
-   background: rgba(0, 0, 0, 0.7);
-   opacity: 0;
-   transition: opacity 0.3s ease;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   text-align: center;
+#portfolio p {
+    color: #6e6e6e; /* Text gri inchis, usor de citit pe fundal deschis */
+    line-height: 26px;
 }
 
-.portfolio-item .item-wrap:hover .overlay {
-   opacity: 1;
+.portfolio-row {
+    margin-bottom: 100px !important;
+    display: flex;
+    align-items: center;
 }
 
-.feature-info {
-   padding: 15px;
-   background: #161616;
+/* Clasa "reverse" pentru a inversa ordinea pe randurile pare */
+.portfolio-row.reverse {
+    flex-direction: row-reverse;
 }
 
-.feature-info h5 {
-   margin-bottom: 5px;
-   font-size: 15px;
+.portfolio-img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Umbra mult mai discreta */
+    border: 1px solid #ddd;
+}
+
+.portfolio-desc {
+    padding: 0 50px !important;
+}
+
+/* Mobile Fix */
+@media only screen and (max-width: 767px) {
+    .portfolio-row, .portfolio-row.reverse {
+        display: block;
+        margin-bottom: 50px !important;
+    }
+    .portfolio-desc {
+        padding: 20px 0 !important;
+        text-align: center;
+    }
 }
 
 		
@@ -346,110 +357,52 @@
 
    <!-- Portfolio Section
    ================================================== -->
-<section id="portfolio" style="background: #0b0b0b; padding: 100px 0; color: #fff;">
-   
+<section id="portfolio">
+
    <div class="row">
-      <div class="twelve columns">
-         <h1 style="color: #fff; font-size: 40px;">AUTOLIX SHOWCASE</h1>
-         <p class="lead" style="color: #11abb0;">A deep dive into the pages and features of a modern car marketplace.</p>
-         <hr style="border-color: #222;">
+      <div class="twelve columns collapsed">
+         <h1>AutoLix Platform Walkthrough</h1>
+         <p class="lead">A step-by-step look into the architecture and user experience of the application.</p>
       </div>
    </div>
 
-   <div class="row section-head">
-      <div class="twelve columns">
-         <h2 style="color: #fff; border-left: 4px solid #11abb0; padding-left: 15px;">Core Platform Pages</h2>
+   <div class="row portfolio-row">
+      <div class="six columns">
+         <img src="images/home.png" alt="AutoLix Homepage" class="portfolio-img">
+      </div>
+      <div class="six columns portfolio-desc">
+         <h3>01. Dynamic Homepage</h3>
+         <p>The primary discovery tool of AutoLix, featuring a high-impact search engine. It allows users to quickly scan featured listings and the latest automotive offers directly from the landing page.</p>
       </div>
    </div>
 
-   <div class="row">
-      <div id="portfolio-wrapper" class="bgrid-halves cf">
-
-         <div class="columns portfolio-item">
-            <div class="item-wrap">
-               <img alt="AutoLix Homepage" src="images/home.png">
-               <div class="overlay">
-                  <div class="portfolio-item-meta">
-                     <h5>Homepage & Discovery</h5>
-                     <p>Dynamic landing page with advanced search hero section.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-         <div class="columns portfolio-item">
-            <div class="item-wrap">
-               <img alt="Marketplace" src="images/market.png">
-               <div class="overlay">
-                  <div class="portfolio-item-meta">
-                     <h5>Marketplace Explorer</h5>
-                     <p>Real-time filtering engine for car listings.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-         <div class="columns portfolio-item">
-            <div class="item-wrap">
-               <img alt="Login Page" src="images/login.png">
-               <div class="overlay">
-                  <div class="portfolio-item-meta">
-                     <h5>Secure Authentication</h5>
-                     <p>Spring Security login with JWT and DTO validation.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-         <div class="columns portfolio-item">
-            <div class="item-wrap">
-               <img alt="Admin Database" src="images/analists.png"> <div class="overlay">
-                  <div class="portfolio-item-meta">
-                     <h5>Inventory Management</h5>
-                     <p>Full CRUD operations and Admin dashboard control.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-      </div> </div>
-
-   <div class="row section-head" style="margin-top: 80px;">
-      <div class="twelve columns">
-         <h2 style="color: #fff; border-left: 4px solid #11abb0; padding-left: 15px;">Engineering Features</h2>
+   <div class="row portfolio-row reverse">
+      <div class="six columns">
+         <img src="images/market.png" alt="Marketplace" class="portfolio-img">
+      </div>
+      <div class="six columns portfolio-desc">
+         <h3>02. Vehicle Marketplace</h3>
+         <p>A sophisticated browsing experience with multi-criteria filtering. Users can sort listings by price, brand, and technical specs, powered by optimized JPA queries for instant results.</p>
       </div>
    </div>
 
-   <div class="row">
-      <div class="bgrid-thirds s-bgrid-halves cf">
+   <div class="row portfolio-row">
+      <div class="six columns">
+         <img src="images/tab-logo.png" alt="Smart Estimator" class="portfolio-img">
+      </div>
+      <div class="six columns portfolio-desc">
+         <h3>03. Smart Price Estimator</h3>
+         <p>A core backend module that calculates fair market value based on mileage and horsepower, helping users price their cars competitively using a custom algorithmic engine.</p>
+      </div>
+   </div>
 
-         <div class="columns portfolio-item">
-            <div class="item-wrap feature-wrap">
-               <img alt="Price Estimator" src="images/price.png"> <div class="feature-info">
-                  <h5 style="color: #11abb0;"><i class="fa fa-calculator"></i> Smart Price Estimator</h5>
-                  <p style="font-size: 13px; color: #888;">Algorithmic valuation based on technical car specs.</p>
-               </div>
-            </div>
-         </div>
-
-         <div class="columns portfolio-item">
-            <div class="item-wrap feature-wrap">
-               <img alt="Versus Engine" src="images/versus.png"> <div class="feature-info">
-                  <h5 style="color: #11abb0;"><i class="fa fa-columns"></i> Versus Engine</h5>
-                  <p style="font-size: 13px; color: #888;">Side-by-side comparison of multiple vehicle models.</p>
-               </div>
-            </div>
-         </div>
-
-         <div class="columns portfolio-item">
-            <div class="item-wrap feature-wrap">
-               <img alt="Rating System" src="images/rating.png"> <div class="feature-info">
-                  <h5 style="color: #11abb0;"><i class="fa fa-star"></i> Rating System</h5>
-                  <p style="font-size: 13px; color: #888;">Community trust system for sellers and listings.</p>
-               </div>
-            </div>
-         </div>
-
+   <div class="row portfolio-row reverse">
+      <div class="six columns">
+         <img src="images/analists.jpg" alt="Admin Database" class="portfolio-img">
+      </div>
+      <div class="six columns portfolio-desc">
+         <h3>04. Inventory Management</h3>
+         <p>A comprehensive dashboard for administrators to manage the car database. It includes full CRUD capabilities, allowing for secure adding, editing, and removal of listings.</p>
       </div>
    </div>
 
