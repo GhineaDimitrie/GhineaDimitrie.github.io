@@ -7,63 +7,55 @@
 
 	<style>
 
-		/* Clean Integration with Template Style */
-#portfolio {
-    background: #f7f7f7 !important; /* Gri deschis, similar cu sectiunea Resume */
-    padding: 90px 0;
-    border-top: 1px solid #e5e5e5;
+		/* Project Showcase Styling */
+.project-feature {
+   margin-bottom: 100px !important;
+   display: flex;
+   align-items: center;
+   text-align: left;
 }
 
-#portfolio h1 {
-    color: #313131; /* Culoarea standard a titlurilor din template */
-    font-size: 38px;
-    text-align: center;
-    margin-bottom: 60px;
+.feature-img {
+   border-radius: 12px;
+   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+   transition: transform 0.3s ease;
 }
 
-#portfolio h3 {
-    color: #11abb0; /* Turcoazul specific template-ului */
-    margin-bottom: 15px;
+.feature-img:hover {
+   transform: scale(1.02);
 }
 
-#portfolio p {
-    color: #6e6e6e; /* Text gri inchis, usor de citit pe fundal deschis */
-    line-height: 26px;
+.feature-desc h3 {
+   color: #11ABB0;
+   font-size: 24px;
+   margin-bottom: 15px;
 }
 
-.portfolio-row {
-    margin-bottom: 100px !important;
-    display: flex;
-    align-items: center;
+.tech-list {
+   list-style: none;
+   margin: 20px 0;
+   padding: 0;
 }
 
-/* Clasa "reverse" pentru a inversa ordinea pe randurile pare */
-.portfolio-row.reverse {
-    flex-direction: row-reverse;
+.tech-list li {
+   font-size: 14px;
+   color: #666;
+   margin-bottom: 8px;
 }
 
-.portfolio-img {
-    width: 100%;
-    border-radius: 4px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Umbra mult mai discreta */
-    border: 1px solid #ddd;
+.tech-list i {
+   color: #11ABB0;
+   margin-right: 10px;
 }
 
-.portfolio-desc {
-    padding: 0 50px !important;
-}
-
-/* Mobile Fix */
+/* Responsivitate pentru mobil */
 @media only screen and (max-width: 767px) {
-    .portfolio-row, .portfolio-row.reverse {
-        display: block;
-        margin-bottom: 50px !important;
-    }
-    .portfolio-desc {
-        padding: 20px 0 !important;
-        text-align: center;
-    }
+   .project-feature { flex-direction: column !important; margin-bottom: 60px !important; }
+   .feature-desc { padding-top: 20px; text-align: center; }
 }
+
+/* Clasa pentru alternanță (Imagine dreapta, text stânga) */
+.reverse { flex-direction: row-reverse; }/* Clean Integration with Template Style */
 
 		
 	</style>
@@ -357,57 +349,64 @@
 
    <!-- Portfolio Section
    ================================================== -->
-<section id="portfolio">
 
+<section id="portfolio">
    <div class="row">
       <div class="twelve columns collapsed">
-         <h1>AutoLix Platform Walkthrough</h1>
-         <p class="lead">A step-by-step look into the architecture and user experience of the application.</p>
+         <h1>My Latest Project: AutoLix</h1>
+         <p class="lead" style="margin-bottom: 50px;">A comprehensive automotive marketplace and analysis platform built for high performance and seamless user experience.</p>
+
+         <div class="row project-feature">
+            <div class="seven columns">
+               <img src="images/home.jpg" alt="AutoLix Home" class="feature-img">
+            </div>
+            <div class="five columns feature-desc">
+               <h3>01. Smart Discovery</h3>
+               <p>The landing page features a high-impact hero section with a multi-criteria search engine. Users can filter vehicles by make, model, price range, and technical specs instantly.</p>
+               <ul class="tech-list">
+                  <li><i class="fa fa-bolt"></i> Real-time filtering logic</li>
+                  <li><i class="fa fa-th-large"></i> Dynamic vehicle categories</li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="row project-feature reverse">
+            <div class="five columns feature-desc">
+               <h3>02. Versus Engine</h3>
+               <p>The most advanced feature of the platform. It allows users to pick two vehicles from their favorites for a side-by-side technical comparison.</p>
+               <ul class="tech-list">
+                  <li><i class="fa fa-check"></i> Smart 1v1 analysis verdict</li>
+                  <li><i class="fa fa-dashboard"></i> Comparative performance metrics</li>
+               </ul>
+            </div>
+            <div class="seven columns">
+               <img src="images/versus.jpg" alt="Versus Engine" class="feature-img">
+            </div>
+         </div>
+
+         <div class="row project-feature">
+            <div class="seven columns">
+               <img src="images/price.png" alt="Price Estimator" class="feature-img">
+            </div>
+            <div class="five columns feature-desc">
+               <h3>03. Smart Price Estimator</h3>
+               <p>A data-driven tool that calculates a realistic price range for any car based on manufacturing year, mileage, and engine power, helping users price their ads correctly.</p>
+            </div>
+         </div>
+
+         <div class="row project-feature reverse">
+            <div class="five columns feature-desc">
+               <h3>04. Inventory Management</h3>
+               <p>A robust administrative dashboard to manage the car database. Includes full CRUD operations (Create, Read, Update, Delete) with advanced table sorting and filtering.</p>
+            </div>
+            <div class="seven columns">
+               <img src="images/analists.jpg" alt="Database Management" class="feature-img">
+            </div>
+         </div>
+
       </div>
    </div>
-
-   <div class="row portfolio-row">
-      <div class="six columns">
-         <img src="images/home.png" alt="AutoLix Homepage" class="portfolio-img">
-      </div>
-      <div class="six columns portfolio-desc">
-         <h3>01. Dynamic Homepage</h3>
-         <p>The primary discovery tool of AutoLix, featuring a high-impact search engine. It allows users to quickly scan featured listings and the latest automotive offers directly from the landing page.</p>
-      </div>
-   </div>
-
-   <div class="row portfolio-row reverse">
-      <div class="six columns">
-         <img src="images/market.png" alt="Marketplace" class="portfolio-img">
-      </div>
-      <div class="six columns portfolio-desc">
-         <h3>02. Vehicle Marketplace</h3>
-         <p>A sophisticated browsing experience with multi-criteria filtering. Users can sort listings by price, brand, and technical specs, powered by optimized JPA queries for instant results.</p>
-      </div>
-   </div>
-
-   <div class="row portfolio-row">
-      <div class="six columns">
-         <img src="images/tab-logo.png" alt="Smart Estimator" class="portfolio-img">
-      </div>
-      <div class="six columns portfolio-desc">
-         <h3>03. Smart Price Estimator</h3>
-         <p>A core backend module that calculates fair market value based on mileage and horsepower, helping users price their cars competitively using a custom algorithmic engine.</p>
-      </div>
-   </div>
-
-   <div class="row portfolio-row reverse">
-      <div class="six columns">
-         <img src="images/analists.jpg" alt="Admin Database" class="portfolio-img">
-      </div>
-      <div class="six columns portfolio-desc">
-         <h3>04. Inventory Management</h3>
-         <p>A comprehensive dashboard for administrators to manage the car database. It includes full CRUD capabilities, allowing for secure adding, editing, and removal of listings.</p>
-      </div>
-   </div>
-
 </section>
-
 
 
 	   
