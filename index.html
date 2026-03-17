@@ -2,6 +2,82 @@
 <!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+
+
+
+	<style>
+
+
+/* Custom Portfolio Styling for AutoLix */
+
+#portfolio {
+    background: #0F0F0F; /* Fundal închis pentru contrast profesional */
+    padding-top: 90px;
+    padding-bottom: 60px;
+}
+
+#portfolio h1 {
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.lead {
+    font-family: 'opensans-light', sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.project-image-container {
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.project-image-container:hover {
+    transform: translateY(-5px); /* Efect de plutire la hover */
+}
+
+.feature-step h4 {
+    font-size: 19px;
+    color: #11ABB0 !important; /* Culoarea accentului din template */
+}
+
+.feature-step h4 i {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.feature-step p {
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+/* Stil pentru butonul de GitHub */
+#portfolio .button {
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+#portfolio .button:hover {
+    background: #fff !important;
+    color: #11ABB0 !important;
+}
+
+/* Ajustări pentru mobil */
+@media only screen and (max-width: 767px) {
+    .six columns {
+        width: 100% !important;
+        float: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+		
+	</style>
 <head>
 
    <!--- Basic Page Needs
@@ -296,44 +372,66 @@
 <section id="portfolio">
 
       <div class="row">
-
          <div class="twelve columns collapsed">
+            <h1>Featured Project: AutoLix</h1>
+            <p class="lead" style="text-align: center; color: #11ABB0; margin-bottom: 40px;">
+               A comprehensive Full-Stack automotive marketplace and management platform.
+            </p>
 
-            <h1>My Latest Project</h1>
-
-            <div class="row item">
-
+            <div class="row">
                <div class="six columns">
-                  <img alt="Project Screenshot" src="images/proiect-principal.jpg" style="width: 100%; border-radius: 5px; margin-bottom: 20px;">
-               </div>
-
-               <div class="six columns">
-                  <h2 style="color: #fff;">AutoLix</h2>
-                  <p style="color: #bfbfbf;">
-                     <strong>Overview:</strong><br>
-                     Aceasta este o prezentare detaliată a ultimului meu proiect. Am construit o soluție care [descrie scopul, ex: automatizează procesul de recrutare].
-                  </p>
+                  <div class="project-image-container" style="background: #1F1F1F; padding: 10px; border-radius: 8px; border: 1px solid #333;">
+                     <img alt="AutoLix Main Interface" src="images/home.png" style="width: 100%; display: block; border-radius: 4px;">
+                  </div>
                   
-                  <p style="color: #bfbfbf;">
-                     <strong>The Tech Behind It:</strong><br>
-                     Proiectul a fost dezvoltat folosind <span>Java (Spring Boot)</span> pentru backend și <span>React</span> pentru frontend, fiind găzduit pe containere <span>Docker</span>.
-                  </p>
-
-                  <p style="color: #bfbfbf;">
-                     <strong>Core Impact:</strong><br>
-                     &bull; Am redus timpul de procesare cu 40%.<br>
-                     &bull; Securitate sporită prin integrarea OAuth2.<br>
-                     &bull; Interfață optimizată pentru mobil.
-                  </p>
-
-                  <div class="link-box" style="margin-top: 20px;">
-                     <a href="[LINK_GITHUB]" class="button" style="background: #11abb0; color: #fff; padding: 12px 20px; text-decoration: none; border-radius: 3px;">
-                        <i class="fa fa-github"></i> View on GitHub
-                     </a>
+                  <div style="margin-top: 25px;">
+                     <h5 style="color: #fff; border-bottom: 1px solid #11ABB0; display: inline-block;">Technical Stack</h5>
+                     <p style="font-size: 14px; color: #888; margin-top: 10px;">
+                        <strong>Backend:</strong> Java 17, Spring Boot, Spring Security, Spring Data JPA<br>
+                        <strong>Frontend:</strong> Thymeleaf Templating Engine, HTML5, CSS3, JavaScript<br>
+                        <strong>Database:</strong> PostgreSQL / H2 (Managing Car, User, and Favorite entities)<br>
+                        <strong>Architecture:</strong> Model-View-Controller (MVC) with a dedicated Service Layer
+                     </p>
                   </div>
                </div>
 
-            </div> </div> </div> </section> ```
+               <div class="six columns" style="text-align: left;">
+                  
+                  <div class="feature-step" style="margin-bottom: 20px;">
+                     <h4 style="color: #fff; margin-bottom: 5px;"><i class="fa fa-user-shield"></i> 1. Secure Authentication & RBAC</h4>
+                     <p style="color: #ccc; font-size: 15px;">
+                        Implemented a robust security layer using <strong>Spring Security</strong>. It features Role-Based Access Control (RBAC), distinguishing between standard users and administrators, ensuring secure access to car management and analytics.
+                     </p>
+                  </div>
+
+                  <div class="feature-step" style="margin-bottom: 20px;">
+                     <h4 style="color: #fff; margin-bottom: 5px;"><i class="fa fa-search"></i> 2. Dynamic Inventory & Filtering</h4>
+                     <p style="color: #ccc; font-size: 15px;">
+                        A complete CRUD system for vehicle listings. Users can perform advanced searches and dynamic filtering by brand, price, or fuel type, powered by efficient <strong>JPA Repository</strong> queries.
+                     </p>
+                  </div>
+
+                  <div class="feature-step" style="margin-bottom: 20px;">
+                     <h4 style="color: #fff; margin-bottom: 5px;"><i class="fa fa-calculator"></i> 3. Smart Price Estimator</h4>
+                     <p style="color: #ccc; font-size: 15px;">
+                        A custom-built estimation engine (EstimateController) that calculates real-time market value for vehicles based on technical parameters such as year, mileage, and engine displacement.
+                     </p>
+                  </div>
+
+                  <div class="feature-step" style="margin-bottom: 20px;">
+                     <h4 style="color: #fff; margin-bottom: 5px;"><i class="fa fa-chart-line"></i> 4. Admin Dashboard & Favorites</h4>
+                     <p style="color: #ccc; font-size: 15px;">
+                        Includes a dedicated admin panel for user and listing oversight, along with a "Favorites" system for users to track vehicles of interest, significantly enhancing the overall User Experience.
+                     </p>
+                  </div>
+
+                  <div class="link-box" style="margin-top: 30px;">
+                     <a href="https://github.com/GhineaDimitrie/[REPOSITORY-NAME]" class="button" style="background: #11abb0; color: #fff; border: none; padding: 12px 25px; border-radius: 3px;">
+                        <i class="fa fa-github"></i> View Source Code
+                     </a>
+                  </div>
+
+               </div> </div> </div> </div> </section> 
 
 
 	   
